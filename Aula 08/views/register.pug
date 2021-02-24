@@ -1,0 +1,13 @@
+html
+    head
+        title SERVER
+    body
+        h1 Register
+
+        p Pagina para criar um registro
+
+        form(action="/register", method="POST")
+            input(type="text", name="nome", placeholder="Nome do usuario", required)
+            input(type="email", name="email", placeholder="nome@mail.com")
+            input(type="password", name="senha", placeholder="****", required)
+            input(type="submit", value="Registrar")

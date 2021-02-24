@@ -1,0 +1,33 @@
+html
+    head
+        title SERVER
+        link(rel="stylesheet", href="../style.css")
+    body
+        h1 Profile
+
+        h2 Pagina do perfil do #{nome}
+
+        p Id: #{id}
+        p Email: #{email}
+        p Senha: #{senha}
+        p Registrado em: #{registrado_em.toLocaleDateString()}
+
+        form(action="/deletar", method="POST")
+            input(type="hidden", name="nome", value=nome)
+            input(type="submit", value="Deletar perfil")
+
+        hr
+
+        form(action="/senha", method="POST")
+            input(type="hidden", name="nome", value=nome)
+            input(type="text", name="novasenha", placeholder="Nova senha", required)
+            input(type="submit", value="Mudar senha")
+
+        hr
+
+        form(action="/email", method="POST")
+            input(type="hidden", name="nome", value=nome)
+            input(type="email", name="novaemail", placeholder="Nova email", required)
+            input(type="submit", value="Mudar email")
+
+            
